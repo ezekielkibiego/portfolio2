@@ -30,3 +30,7 @@ def user_login(request):
         form=LoginForm()
     return render(request,'account/login.html', {'form': form})
 
+def projects(request):
+    current_user = request.user
+    projects = Project.objects.all().order_by('-id')
+    return render(request, 'index.html', {'projects': projects,'current_user':current_user})
