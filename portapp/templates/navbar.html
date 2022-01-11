@@ -1,0 +1,109 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg fixed-top">
+<style>
+   body{
+    font-family: 'Lato', global_font_string;
+    font-weight: 500;
+    font-size: x-large;
+    color: rgba(27, 26, 26, 0.945);
+    }
+    
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-image: url('static/images/kibiego.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow-x: hidden;
+      transition: 0.2s;
+      padding-top: 60px;
+      
+    }
+    
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 40px;
+      color: black;
+      display: block;
+      transition: 0.2s;
+      
+    }
+    
+    .sidenav a:hover {
+      color: whitesmoke;
+    }
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 70px;
+      margin-left: 50px;
+      
+
+    }
+    .kibz a{
+      text-decoration: none;
+      color: black;
+    }
+   
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 35px;}
+    }
+    </style>
+    </head>
+    <body>
+      <div class="container-fluid kibz"><a href="/">
+        <h3><i>ezekielkibiego</i></h3>
+      </a>
+      </div>
+    <div id="mySidenav" class="sidenav text-center">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a class="navbar-brand" href="/" style=" color: black;"><i class="fa fa-home"
+        aria-hidden="true"></i></a>
+        
+        <div class="">
+            <div>
+                <a href="/" class="pots">
+                  Home
+                </a>
+            </div>
+        </div>
+        <div>
+          <a href="/" class="pots">
+            About
+          </a>
+      </div>
+        <div>
+            <a href="/" class="pots">
+              Portfolio
+            </a>
+        </div>
+        <div>
+            <a href="/" class="pots">
+             Contact
+            </a>
+        </div>
+    </div>
+    
+    
+    <span style="font-size:50px;cursor:pointer; margin-left: 80%; margin-top: 1.5%;" onclick="openNav()">&#9776;</span>
+    
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+       
+</nav>
