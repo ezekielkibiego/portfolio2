@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+{% load bootstrap4 %}
+{% load static %}
+{% block title %}Log-in{% endblock %}
+
+{% block content %}
+
+<style>
+   
+</style>
+
+<h1>Log-in</h1>
+<p>Kindly, use the following form to login</p>
+
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="Log in"></p>
+</form>
+
+{% endblock %}
