@@ -8,8 +8,21 @@ from .forms import LoginForm
 
 
 def index(request):
-   
-    return render(request, 'index.html')
+    current_user = request.user
+    projects = Project.objects.all().order_by('-id')
+    if request.method == "POST":
+        
+        form=CommentForm(request.POST,request.FILES)
+
+        if form.is_valid():
+            comment=form.save(commit=False)
+            comment.user=current_user
+            
+            comment.save()
+        return HttpResponseRedirect('/')
+    else:
+        form=CommentForm()
+    return render(request, 'index.html', {'projects': projects, 'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -34,3 +47,19 @@ def projects(request):
     current_user = request.user
     projects = Project.objects.all().order_by('-id')
     return render(request, 'index.html', {'projects': projects,'current_user':current_user})
+
+# def create_comment(request):
+#     current_user = request.user
+#     if request.method == "POST":
+        
+#         form=CommentForm(request.POST,request.FILES)
+
+#         if form.is_valid():
+#             comment=form.save(commit=False)
+#             comment.user=current_user
+            
+#             comment.save()
+#         return HttpResponseRedirect('/')
+#     else:
+#         form=CommentForm()
+#     return render (request,'indext.html', {'form': form})
