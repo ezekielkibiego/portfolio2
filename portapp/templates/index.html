@@ -2,6 +2,30 @@
 {% load bootstrap4 %}
 {% block content %}
 
+<div class="container port">
+
+    <div class="home" id="home">
+
+
+        <div class="heading2 text-center">
+            <h1 class="heading">Hey, My Name is Ezekiel Kibiego</h1>
+        </div>
+    </div>
+
+   
+        
+
+
+    
+</div>
+
+</div>
+
+
+
+
+
+
 <style>
     .port {
         margin-top: 7%;
@@ -62,107 +86,8 @@
         }
 
     }
+
 </style>
 
-<div class="container-fluid port">
-
-    <div class="home" id="home">
-
-
-        <div class="heading2 text-center">
-            <h1 class="heading">Hey, My Name is Ezekiel Kibiego</h1>
-        </div>
-    </div>
-
-    <div class="container">
-        <h2 class="text-center" id="portfolio">My Projects</h2>
-        <p>
-            Below is a list of <b>some</b> of the hands on projects I've been working on in the last 6 months. All of
-            these
-            were built during my 6 months nonstop coding, where I completed all the projects required to get my
-            Full-Stack
-            Developer certification from
-            <a href="https://moringaschool.com/" target="_blank" rel="noopener noreferrer">
-                Moringa School.
-            </a>
-
-            View all my projects <a href="https://github.com/ezekielkibiego?tab=repositories" target="_blank"
-                rel="noopener noreferrer">here</a>.
-
-        </p>
-
-        <div class="row">
-            {% for pros in projects %}
-            <div class="col-md-4 card">
-
-                <div class="card-group">
-                    <div class="">
-                        <h3 class="card-title text-center"> {{pros.title}}</h3>
-                        <a href="https://theneighborhoods.herokuapp.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ pros.image.url }}" class="card-img-top resp" alt="Personal">
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title"> <i>Built using; {{pros.technologies}}</i></h5>
-                            <p class="card-text">{{pros.description}}</p>
-
-
-                        </div>
-                        <div class="row card-footer">
-                            <div class="col-md-6">
-                                <a href="{{pros.url}}" class="btn btn-outline-dark bg-dark text-white rounded-pill">View
-                                    Repository</a>
-                            </div>
-
-
-                            <div class="card-footer">
-                                <small class="text-muted"> {{pros.date|date}}</small>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-            {% endfor %}
-        </div>
-        <h2 class="text-center mt-5">Contact</h2>
-        <div className="heading-wrapper mt-5">
-            <div className="heading">
-                <p className="title">
-                    Would like to contact me?
-                </p>
-
-                <p className="subtitle">
-                    Kindly, use the form below or send an email to <a href="mailto: kibiezekiel@gmail.com"
-                        target="_blank">kibiezekiel@gmail.com</a>
-                    :
-                </p>
-            </div>
-            <form action="" method="post" enctype="multipart/form-data">
-                {%csrf_token%}
-                {% bootstrap_form form%}
-                <input type="submit" class="btn btn-dark " value="Submit">
-            </form>
-        </div>
-
-    </div>
-    
-</div>
-<div class="container text-center contact">
-    <div>
-        <div class="row">
-            <div class="col">
-                <a href="tel:+254722991833" class="fa fa-phone icon" target="_blank"></a>
-                <a href="mailto: kibiezekiel@gmail.com" class="fa fa-envelope icon" target="_blank"></a>
-                <a href="https://twitter.com/KibiegoEzekiel" class="fa fa-twitter icon" target="_blank"></a>
-                <a href="https://www.facebook.com/kibiego.ezekiel.9" class="fa fa-facebook icon" target="_blank"></a>
-            </div>
-        </div>
-    </div>
-</div>
-</div><br>
-<div class="container text-center b-text">
-<p>&copy; 2022 | <i>Ezekiel Kibiego</i></p>
-</div>
 
 {% endblock %}
