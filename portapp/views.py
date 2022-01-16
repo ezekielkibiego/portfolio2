@@ -5,24 +5,15 @@ from .models import *
 from portapp.forms import *
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
+import requests
+from pprint import pprint
 
+
+API_KEY = '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'
 
 def index(request):
-    current_user = request.user
-    projects = Project.objects.all().order_by('-id')
-    if request.method == "POST":
-        
-        form=CommentForm(request.POST,request.FILES)
-
-        if form.is_valid():
-            comment=form.save(commit=False)
-            comment.user=current_user
-            
-            comment.save()
-        return HttpResponseRedirect('/')
-    else:
-        form=CommentForm()
-    return render(request, 'index.html', {'projects': projects, 'form': form})
+    
+    return render(request, 'index.html')
 
 def user_login(request):
     if request.method == 'POST':
@@ -44,22 +35,35 @@ def user_login(request):
     return render(request,'account/login.html', {'form': form})
 
 def projects(request):
-    current_user = request.user
+    
     projects = Project.objects.all().order_by('-id')
-    return render(request, 'index.html', {'projects': projects,'current_user':current_user})
+    return render(request, 'projects.html', {'projects': projects})
 
-# def create_comment(request):
-#     current_user = request.user
-#     if request.method == "POST":
+def contact(request):
+    current_user = request.user
+    if request.method == "POST":
         
-#         form=CommentForm(request.POST,request.FILES)
+        form=CommentForm(request.POST,request.FILES)
 
-#         if form.is_valid():
-#             comment=form.save(commit=False)
-#             comment.user=current_user
+        if form.is_valid():
+            comment=form.save(commit=False)
+            comment.user=current_user
             
-#             comment.save()
-#         return HttpResponseRedirect('/')
-#     else:
-#         form=CommentForm()
-#     return render (request,'indext.html', {'form': form})
+            comment.save()
+        return HttpResponseRedirect('/contact')
+    else:
+        form=CommentForm()
+    return render (request,'contact.html', {'form': form})
+
+def about(request):
+    
+    about = About.objects.all().order_by('-id')
+    return render(request, 'about.html', {'about': about})
+
+def github(request):
+    url = f'https://api.github.com/users/ezekielkibiego/repos={API_KEY}'
+    
+    user_data = requests.get(url).json()
+    pprint(user_data)
+
+    return render(request, 'github.html', {'user_data':user_data})
