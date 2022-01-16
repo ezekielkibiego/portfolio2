@@ -11,6 +11,7 @@ from pprint import pprint
 
 API_KEY = ''
 
+
 def index(request):
     
     return render(request, 'index.html')
