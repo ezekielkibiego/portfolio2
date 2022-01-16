@@ -9,7 +9,7 @@ import requests
 from pprint import pprint
 
 
-API_KEY = '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'
+API_KEY = ''
 
 def index(request):
     
