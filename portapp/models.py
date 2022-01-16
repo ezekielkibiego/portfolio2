@@ -11,6 +11,7 @@ class Project(models.Model):
     description = models.TextField(max_length=600)
     technologies = models.TextField(max_length=100, null=True)
     url = models.URLField(null=True)
+    link = models.URLField(null=True)
     date = models.DateTimeField(auto_now_add=True, null=True)
 
     
@@ -21,7 +22,7 @@ class Project(models.Model):
         return projects    
 
     def str(self):
-        return self.user.username
+        return self.title
 
     @classmethod
     def get_project_by_id(cls, id):
@@ -61,3 +62,13 @@ class Comment(models.Model):
     
     def __str__(self):
         return self.name
+
+class About(models.Model):
+    description = models.TextField()
+    image = CloudinaryField("image")
+    skills = models.TextField()
+    
+    
+    
+    def __str__(self):
+        return self.skills
