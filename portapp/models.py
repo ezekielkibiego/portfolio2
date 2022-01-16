@@ -2,6 +2,8 @@ from django.db import models
 import datetime as dt
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
+from io import BytesIO
+from django.core.files import File
 
 
 class Project(models.Model):
