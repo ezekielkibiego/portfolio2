@@ -9,7 +9,7 @@ urlpatterns = [
     path('account/login/',views.user_login ,name = 'login'),
     path('projects/',views.projects ,name = 'projects'),
     path('contact/',views.contact ,name = 'contact'),
-    path('github',views.github ,name = 'github'),
+    # path('github',views.github ,name = 'github'),
     path('about/',views.about ,name = 'about'),
     
     

@@ -37,8 +37,14 @@ def user_login(request):
 
 def projects(request):
     
+    url = f'https://api.github.com/users/ezekielkibiego/repos'
+    
+    user_data = requests.get(url)
+    data = user_data.json()
+    pprint(user_data)
+    
     projects = Project.objects.all().order_by('-id')
-    return render(request, 'projects.html', {'projects': projects})
+    return render(request, 'projects.html', {'projects': projects, 'user_data':user_data,'repos':data})
 
 def contact(request):
     current_user = request.user
@@ -61,10 +67,11 @@ def about(request):
     about = About.objects.all().order_by('-id')
     return render(request, 'about.html', {'about': about})
 
-def github(request):
-    url = f'https://api.github.com/users/ezekielkibiego/repos={API_KEY}'
+# def github(request):
+#     url = f'https://api.github.com/users/ezekielkibiego/repos'
     
-    user_data = requests.get(url).json()
-    pprint(user_data)
-
-    return render(request, 'github.html', {'user_data':user_data})
+#     user_data = requests.get(url)
+#     data = user_data.json()
+#     pprint(user_data)
+    
+#     return render(request, 'github.html', {'user_data':user_data,'repos':data})

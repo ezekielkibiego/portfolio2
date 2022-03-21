@@ -14,17 +14,31 @@
 
   {% block styles %}
     {% bootstrap_css %}
+     
+    
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Shalimar&display=swap" rel="stylesheet">
+    
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="/static/css/loader.css">
   {% endblock %}
 </head>
-<body>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" >
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class=" position-relative">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img pere-text">
+          <img src="static/images/kibiego.jpg" width="50" style="border-radius: 50%; text-align: center;" alt="">
+        </div>
+        <h3 class="text-center animate__animated animate__zoomIn"><span class="text-info ">Kibiego </span><span></span></h3>
+      </div>
+    </div>
+  </div>
     {% include "navbar.html" %}
     
     {% block content %} 
@@ -32,7 +46,17 @@
     {% include "footer.html" %}
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="static/js/script.js"></script> 
+       
+        <script src="/static/js/loader.js"></script>
+        
+        
+        <script>
+          $('.js-tilt').tilt({
+            scale: 1.1
+          })
+          
+          
+        </script>
      {% bootstrap_javascript %}
     
     {% endblock %}

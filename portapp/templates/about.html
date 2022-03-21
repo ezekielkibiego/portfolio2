@@ -6,53 +6,58 @@
 
     <h1 class="text-center mb-5">About Me</h1>
 
-    {% for abt in about %}
+
     <div class="row mb-5">
-        
+
         <div class="col-md-8">
             <p> I'm a Freelance Full-Stack Software Developer and Designer based in Nairobi, Kenya.</p>
             <p>I am passionate about building web applications that are performant, accessible,
-                 and have a great user experience. Currently, I am very interested in Backend Development, 
-                 creating APIs, and working with databases although, I also like Frontend. 
-                 As well, I am extremely interested in Data Science, more specifically Artificial Intelligence and Machine Learning.</p>
-            <p>My coding journey commenced in 2021 when I got an opportunity to join <a href="https://moringaschool.com/" target="_blank" rel="noopener noreferrer">
-                Moringa School
-            </a> for a Certificate in Software Development .</p>
-            <p>Outside of work I love traveling, watching informative movies especially with themes of intelligence/power/politics/technology, and listening to music</p>
-            
-            
-         
+                and have a great user experience. Currently, I am very interested in Backend Development,
+                creating APIs, and working with databases although, I also like Frontend.
+                As well, I am extremely interested in Data Science, more specifically Artificial Intelligence and
+                Machine Learning.</p>
+            <p>My coding journey commenced in 2021 when I got an opportunity to join <a
+                    href="https://moringaschool.com/" target="_blank" rel="noopener noreferrer">
+                    Moringa School
+                </a> for a Certificate in Software Development .</p>
+            <p>Outside of work I love traveling, watching informative movies especially with themes of
+                intelligence/power/politics/technology, and listening to music</p>
+
+
+
         </div>
         <div class="col-md-4">
-            <img src=" {{abt.image.url}}" class="card-img-top resp" alt="Personal">
+
             <h2 class="text-center mb-3 mt-3"> Tech Skills</h2>
             <ul class="row">
-               <div class="col-md-6">
-                <li> HTML</li>
-                <li> CSS </li>
-                <li>JavaScript </li>
-                <li>TypeScript </li>
-                <li> Angular</li>
-                <li> Python</li>
-                <li>Flask </li>
-               </div>
                 <div class="col-md-6">
-                <li> Django</li>
-                <li> PostgreSQL</li>
-                <li>MySQL </li>
-                <li>Node.js </li>
-                <li>Git </li>
-                <li>Unix/Linux </li>  
-                </div>  
+                    <li> HTML</li>
+                    <li> CSS </li>
+                    <li>JavaScript </li>
+                    <li>TypeScript </li>
+                    <li> Angular</li>
+                    <li>React </li>
+                    <li> Python</li>
+
+                </div>
+                <div class="col-md-6">
+                    <li>Flask </li>
+                    <li> Django</li>
+                    <li> PostgreSQL</li>
+                    <li>MySQL </li>
+
+                    <li>Git </li>
+                    <li>Unix/Linux </li>
+                </div>
             </ul>
-   
+
         </div>
-        
+
     </div>
-   
-   
-    
-    {% endfor %}
+
+
+
+
 
 </div>
 
@@ -70,8 +75,9 @@
         background-color: black;
         color: black;
     }
-    .resp{
-       border-radius: 20px;
+
+    .resp {
+        border-radius: 20px;
     }
 
     .home {
@@ -120,7 +126,6 @@
         }
 
     }
-
 </style>
 
 

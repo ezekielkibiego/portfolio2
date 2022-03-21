@@ -7,22 +7,27 @@
     <div class="home" id="home">
 
 
-        <div class="heading2 text-center">
-            <h1 class="heading">Hey, My Name is Ezekiel Kibiego</h1>
+        <div class=" text-center ">
+            <h1 class="mb-5 text-info">Hey, My Name is Ezekiel Kibiego</h1>
         </div>
-        <div class="prof text-center">
-            <h3>Full-Stack Developer | UI/UX Designer | Tech Enthusiast</h3> 
+        <div class="heading2  text-center row">
+           <div class="col-md-7">
+            <h3 class="heading">Full-Stack Developer | <br> <br> UI/UX Designer | Tech Enthusiast</h3> 
+           </div>
+           <div class="col-md-5">
+               <img src="static/images/real.svg" alt="" width="300">
+           </div>
         </div>
     </div>
 
-    <div class="text-center "><button class="rounded-pill outline-default" ><a href="{% url 'contact' %}" class="pots">
-        <h1>Get In Touch</h1>
-       </a></button></div>
+    <!-- <div >
+        <a href="{% url 'contact' %}"><button class="rounded-pill outline-info bg-info text-white" ><h1 >Get In Touch</h1></button></a>
 
+    </div> -->
     
 </div>
 
-</div>
+
 
 
 
@@ -30,24 +35,19 @@
 
 
 <style>
-    button{
-        margin-top: 60px;
-        margin-bottom: 60px;
-        background-color:  dodgerblue;
+    .btn button{
         border: none;
-        text-decoration: none;
-        outline: none;
-        
-        
-        
+       
+        margin-bottom: 5%;
     }
-    h1{
+
+    h3{
         
         color: white;
        
     }
     .port {
-        margin-top: 7%;
+        margin-top: 10%;
     }
 
     .card img:hover {
@@ -78,16 +78,16 @@
 
     }
 
-    .heading2 h1 {
+    .heading2 h3 {
         position: relative;
-        font-size: 60px;
+        font-size: 40px;
         font-weight: 600;
         color: dodgerblue;
 
 
     }
 
-    .heading2 h1::after {
+    .heading2 h3::after {
         content: "";
         position: absolute;
         left: 0;

@@ -22,40 +22,16 @@
 
     </p>
 
-    <div class="row">
-        {% for pros in projects %}
-        <div class="col-md-4 card">
 
-            <div class="card-group">
-                <div class="">
-                    <h3 class="card-title text-center"> {{pros.title}}</h3>
-                    <a href="{{ pros.link }}" target="_blank" rel="noopener noreferrer">
-                        <img src="{{ pros.image.url }}" class="card-img-top resp" alt="Personal">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title"> <i>Built using; {{pros.technologies}}</i></h5>
-                        <p class="card-text">{{pros.description}}</p>
-
-
-                    </div>
-                    <div class="row card-footer">
-                        <div class="col-md-6">
-                            <a href="{{pros.url}}" class="btn btn-outline-dark bg-dark text-white rounded-pill">View
-                                Repository</a>
-                        </div>
-
-
-                        <div class="card-footer">
-                            <small class="text-muted"> {{pros.date|date}}</small>
-                        </div>
-                    </div>
+        <div class="row">
+            {% for repo in repos %}
+                <div class="col-md-5 m-3 card">
+                    <h3>{{ repo.name }}</h3>
+                    <p>{{ repo.description }}</p>
+                    <a href="{{ repo.html_url }}">View Repo</a>
                 </div>
-
-            </div>
-
+            {% endfor %} 
         </div>
-        {% endfor %}
-       
     </div>
     
 
