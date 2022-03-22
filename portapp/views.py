@@ -37,7 +37,7 @@ def user_login(request):
 
 def projects(request):
     
-    url = f'https://api.github.com/users/ezekielkibiego/repos'
+    url = f'https://api.github.com/users/ezekielkibiego/repos?sort=created_at&order=desc'
     
     user_data = requests.get(url)
     data = user_data.json()
